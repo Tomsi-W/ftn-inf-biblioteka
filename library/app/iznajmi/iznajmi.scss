@@ -1,1 +1,24 @@
 @import "../styles/global";
+
+body {
+  height: 100vh;
+  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+#dodajObrisi {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* 0.5 znači 50% transparentnost */
+}
