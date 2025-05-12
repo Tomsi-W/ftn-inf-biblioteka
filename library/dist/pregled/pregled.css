@@ -29,4 +29,116 @@ body {
   color: #0056b3;
 }
 
+body {
+  height: 100vh;
+  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+#pregledContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+}
+#pregledContainer #listaKnjiga {
+  width: 60%;
+}
+#pregledContainer #listaKnjiga table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#pregledContainer #listaKnjiga table td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+#pregledContainer #listaKnjiga table .naziv-knjige {
+  cursor: pointer;
+  color: lightblue;
+  text-decoration: underline;
+}
+#pregledContainer #listaKnjiga table .naziv-knjige:hover {
+  color: white;
+}
+#pregledContainer #listaKnjiga #detaljiKnjige {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+#pregledContainer #listaKnjiga #detaljiKnjige img {
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+#pregledContainer #dodajKnjigu {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 20px;
+  padding: 10px;
+}
+#pregledContainer #dodajKnjigu h2 {
+  text-align: center;
+}
+#pregledContainer #dodajKnjigu input {
+  border-radius: 10px;
+  height: 20px;
+  border: solid 1px;
+}
+#pregledContainer #dodajKnjigu input:hover {
+  border: solid 1px #007bff;
+}
+#pregledContainer #dodajKnjigu input:focus {
+  background-color: whitesmoke;
+}
+#pregledContainer #dodajKnjigu textarea {
+  border-radius: 10px;
+  border: solid 1px;
+}
+#pregledContainer #dodajKnjigu textarea:hover {
+  border: solid 1px #007bff;
+}
+#pregledContainer #dodajKnjigu textarea:focus {
+  background-color: whitesmoke;
+}
+#pregledContainer #dodajKnjigu #radioBtns .zvezdice {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+#pregledContainer #dodajKnjigu #radioBtns input {
+  display: none;
+}
+#pregledContainer #dodajKnjigu #radioBtns label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#pregledContainer #dodajKnjigu #radioBtns input:checked ~ label,
+#pregledContainer #dodajKnjigu #radioBtns label:hover,
+#pregledContainer #dodajKnjigu #radioBtns label:hover ~ label {
+  color: gold;
+}
+#pregledContainer #dodajKnjigu button {
+  width: 25%;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: auto;
+}
+#pregledContainer #dodajKnjigu button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
 /*# sourceMappingURL=pregled.css.map */

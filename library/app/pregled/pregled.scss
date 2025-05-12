@@ -1,1 +1,136 @@
 @import "../styles/global";
+
+body {
+  height: 100vh;
+  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+#pregledContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+
+  #listaKnjiga {
+    width: 60%;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .naziv-knjige {
+        cursor: pointer;
+        color: lightblue;
+        text-decoration: underline;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    #detaljiKnjige {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      border-radius: 10px;
+      text-align: center;
+
+      img {
+        max-width: 200px;
+        margin-top: 10px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  #dodajKnjigu {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 20px;
+    padding: 10px;
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      border-radius: 10px;
+      height: 20px;
+      border: solid 1px;
+
+      &:hover {
+        border: solid 1px $primary-color;
+      }
+
+      &:focus {
+        background-color: whitesmoke;
+      }
+    }
+
+    textarea {
+      border-radius: 10px;
+      border: solid 1px;
+
+      &:hover {
+        border: solid 1px $primary-color;
+      }
+
+      &:focus {
+        background-color: whitesmoke;
+      }
+    }
+
+   #radioBtns {
+  .zvezdice {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  input:checked ~ label,
+  label:hover,
+  label:hover ~ label {
+    color: gold;
+  }
+}
+
+    button {
+      width: 25%;
+      height: 40px;
+      border-radius: 10px;
+      margin-left: auto;
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}
