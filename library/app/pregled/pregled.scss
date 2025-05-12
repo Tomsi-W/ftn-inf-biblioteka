@@ -1,1 +1,103 @@
 @import "../styles/global";
+
+body {
+  height: 100vh;
+  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+#pregledContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* 0.5 znači 50% transparentnost */
+
+  #dodajKnjigu {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 20px;
+    padding: 10px;
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      border-radius: 10px;
+      height: 20px;
+      border: solid 1px;
+
+      &:hover {
+        border: solid 1px $primary-color;
+      }
+      &:focus {
+        background-color: whitesmoke;
+      }
+    }
+    textarea {
+      border-radius: 10px;
+      border: solid 1px;
+
+      &:hover {
+        border: solid 1px $primary-color;
+      }
+      &:focus {
+        background-color: whitesmoke;
+      }
+    }
+
+    #radioBtns {
+      p {
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+      }
+
+      // Kada je radio dugme izabrano, sve prethodne zvezdice postaju zlatne
+      input:checked ~ label {
+        color: gold;
+      }
+
+      // Kada korisnik pređe mišem na zvezdicu, postepeno postaju zlatne
+      label:hover,
+      label:hover ~ label {
+        color: gold;
+      }
+
+      // Ovo omogućava da se sve prethodne zvezdice (s leva ka desno) pozlate
+      label:hover ~ label {
+        color: gold;
+      }
+    }
+
+    button {
+      width: 25%;
+      height: 40px;
+      border-radius: 10px;
+      margin-left: auto;
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}

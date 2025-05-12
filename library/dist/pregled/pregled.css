@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -27,6 +28,83 @@ body {
 }
 .navbar .nav-links a:hover {
   color: #0056b3;
+}
+
+body {
+  height: 100vh;
+  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+#pregledContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5); /* 0.5 znači 50% transparentnost */
+}
+#pregledContainer #dodajKnjigu {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 20px;
+  padding: 10px;
+}
+#pregledContainer #dodajKnjigu h2 {
+  text-align: center;
+}
+#pregledContainer #dodajKnjigu input {
+  border-radius: 10px;
+  height: 20px;
+  border: solid 1px;
+}
+#pregledContainer #dodajKnjigu input:hover {
+  border: solid 1px #007bff;
+}
+#pregledContainer #dodajKnjigu input:focus {
+  background-color: whitesmoke;
+}
+#pregledContainer #dodajKnjigu textarea {
+  border-radius: 10px;
+  border: solid 1px;
+}
+#pregledContainer #dodajKnjigu textarea:hover {
+  border: solid 1px #007bff;
+}
+#pregledContainer #dodajKnjigu textarea:focus {
+  background-color: whitesmoke;
+}
+#pregledContainer #dodajKnjigu #radioBtns input {
+  display: none;
+}
+#pregledContainer #dodajKnjigu #radioBtns label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+#pregledContainer #dodajKnjigu #radioBtns input:checked ~ label {
+  color: gold;
+}
+#pregledContainer #dodajKnjigu #radioBtns label:hover,
+#pregledContainer #dodajKnjigu #radioBtns label:hover ~ label {
+  color: gold;
+}
+#pregledContainer #dodajKnjigu #radioBtns label:hover ~ label {
+  color: gold;
+}
+#pregledContainer #dodajKnjigu button {
+  width: 25%;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: auto;
+}
+#pregledContainer #dodajKnjigu button:hover {
+  background-color: #007bff;
+  color: white;
 }
 
 /*# sourceMappingURL=pregled.css.map */
