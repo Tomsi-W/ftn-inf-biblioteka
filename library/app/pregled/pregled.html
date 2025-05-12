@@ -12,21 +12,44 @@
       <ul class="nav-links">
         <li><a href="../contact/contact.html">Kontakt</a></li>
         <li>
-          <a href="../pregled/pregled.html"
-            >Pregled <br />
-            knijga</a
-          >
+          <a href="../pregled/pregled.html">
+            Pregled <br />
+            knjiga
+          </a>
         </li>
         <li>
           <a href="../iznajmi/iznajmi.html">Moje <br />Knjige</a>
         </li>
       </ul>
     </nav>
-    <h1>Dobrodošli na pregled svih kniga</h1>
+
+    <h1>Dobrodošli na pregled svih knjiga</h1>
+
     <div id="pregledContainer">
+      <!-- Leva strana: Lista knjiga -->
+      <div id="listaKnjiga">
+        <h2>Lista knjiga</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Br</th>
+              <th>Naziv</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="pregledkontener">
+            <!-- Knjige se ovde prikazuju dinamički -->
+          </tbody>
+        </table>
+
+        <div id="detaljiKnjige"></div>
+      </div>
+
+      <!-- Desna strana: Dodaj knjigu -->
       <form id="dodajKnjigu">
         <h2>Dodaj novu knjigu</h2>
-        <label for="Naziv"><strong>Naziv:</strong></label>
+
+        <label for="naziv"><strong>Naziv:</strong></label>
         <input
           type="text"
           id="naziv"
@@ -34,14 +57,16 @@
           placeholder=" Unesite naziv knjige..."
           required
         />
-        <label for="datumStampanja"><strong>Datum stampanja:</strong></label>
+
+        <label for="datumStampanja"><strong>Datum štampanja:</strong></label>
         <input
           type="date"
           id="datumStampanja"
           name="datumStampanja"
-          placeholder=" Unesite datum stampanja knjige..."
+          placeholder=" Unesite datum štampanja knjige..."
           required
         />
+
         <label for="opisKnjige"><strong>Opis:</strong></label>
         <textarea
           id="opisKnjige"
@@ -49,6 +74,7 @@
           placeholder=" Unesite opis knjige..."
           required
         ></textarea>
+
         <label for="slikaKnjige"><strong>URL do slike knjige</strong></label>
         <input
           type="url"
@@ -56,22 +82,25 @@
           name="slikaKnjige"
           placeholder=" Unesite URL do slike knjige"
         />
+
         <div id="radioBtns">
           <p><strong>Ocenite knjigu:</strong></p>
-          <input type="radio" id="ocena1" name="ocenaKnjige" value="1" />
-          <label for="ocena1">★</label>
+          <div class="zvezdice">
+            <input type="radio" id="ocena5" name="ocenaKnjige" value="5" />
+            <label for="ocena5">★</label>
 
-          <input type="radio" id="ocena2" name="ocenaKnjige" value="2" />
-          <label for="ocena2">★</label>
+            <input type="radio" id="ocena4" name="ocenaKnjige" value="4" />
+            <label for="ocena4">★</label>
 
-          <input type="radio" id="ocena3" name="ocenaKnjige" value="3" />
-          <label for="ocena3">★</label>
+            <input type="radio" id="ocena3" name="ocenaKnjige" value="3" />
+            <label for="ocena3">★</label>
 
-          <input type="radio" id="ocena4" name="ocenaKnjige" value="4" />
-          <label for="ocena4">★</label>
+            <input type="radio" id="ocena2" name="ocenaKnjige" value="2" />
+            <label for="ocena2">★</label>
 
-          <input type="radio" id="ocena5" name="ocenaKnjige" value="5" />
-          <label for="ocena5">★</label>
+            <input type="radio" id="ocena1" name="ocenaKnjige" value="1" />
+            <label for="ocena1">★</label>
+          </div>
         </div>
 
         <button type="button" id="submitBtn" name="submitBtn">
@@ -79,6 +108,7 @@
         </button>
       </form>
     </div>
+
     <script src="pregled.js"></script>
   </body>
 </html>

@@ -14,13 +14,49 @@ h1 {
 
 #pregledContainer {
   display: flex;
-  flex-direction: column;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.5
-  ); /* 0.5 znači 50% transparentnost */
+  flex-direction: row;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+
+  #listaKnjiga {
+    width: 60%;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .naziv-knjige {
+        cursor: pointer;
+        color: lightblue;
+        text-decoration: underline;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    #detaljiKnjige {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      border-radius: 10px;
+      text-align: center;
+
+      img {
+        max-width: 200px;
+        margin-top: 10px;
+        border-radius: 8px;
+      }
+    }
+  }
 
   #dodajKnjigu {
     display: flex;
@@ -41,10 +77,12 @@ h1 {
       &:hover {
         border: solid 1px $primary-color;
       }
+
       &:focus {
         background-color: whitesmoke;
       }
     }
+
     textarea {
       border-radius: 10px;
       border: solid 1px;
@@ -52,41 +90,36 @@ h1 {
       &:hover {
         border: solid 1px $primary-color;
       }
+
       &:focus {
         background-color: whitesmoke;
       }
     }
 
-    #radioBtns {
-      p {
-      }
+   #radioBtns {
+  .zvezdice {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 
-      input {
-        display: none;
-      }
+  input {
+    display: none;
+  }
 
-      label {
-        font-size: 2rem;
-        color: #ccc;
-        cursor: pointer;
-      }
+  label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
 
-      // Kada je radio dugme izabrano, sve prethodne zvezdice postaju zlatne
-      input:checked ~ label {
-        color: gold;
-      }
-
-      // Kada korisnik pređe mišem na zvezdicu, postepeno postaju zlatne
-      label:hover,
-      label:hover ~ label {
-        color: gold;
-      }
-
-      // Ovo omogućava da se sve prethodne zvezdice (s leva ka desno) pozlate
-      label:hover ~ label {
-        color: gold;
-      }
-    }
+  input:checked ~ label,
+  label:hover,
+  label:hover ~ label {
+    color: gold;
+  }
+}
 
     button {
       width: 25%;

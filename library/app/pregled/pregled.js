@@ -18,14 +18,14 @@ function getBooks() {
   if (sacuvaneKnjige) {
     const parsedKnjige = JSON.parse(sacuvaneKnjige);
     return parsedKnjige.map(
-      (knjiga) =>
+      (k) =>
         new Knjiga(
-          knjiga.id,
-          knjiga.naziv,
-          knjiga.datumStampanja,
-          knjiga.putanjaDoSlike,
-          knjiga.opis,
-          knjiga.popularnost
+          k.id,
+          k.naziv,
+          k.datumStampanja,
+          k.putanjaDoSlike,
+          k.opis,
+          k.popularnost
         )
     );
   }
@@ -37,29 +37,28 @@ function setBooks() {
     localStorage.setItem("knjige", JSON.stringify(knjige));
     return true;
   } catch (error) {
-    console.error("Greska pri cuvanju knjiga:", error);
+    console.error("Greška pri čuvanju knjiga:", error);
     return false;
   }
 }
 
 function initializeBooks() {
-  // Ukoliko nema niceg na kljucu knjige, koristi inicijalne knjige
   if (!localStorage.getItem("knjige")) {
     const initialKnjige = [
       new Knjiga(
         1,
-        "Alhemicar",
-        "26.12.2013",
+        "Alhemičar",
+        "2013-12-26",
         "https://laguna.rs/_img/korice/2313/alhemicar-paulo_koeljo_v.jpg",
-        "Priča koja pleni svojom jednostavnošću i inspiriše svojom mudrošću prati mladog andaluzijskog pastira Santjaga, koji iz rodne Španije odlazi u egipatsku pustinju kako bi našao skriveno blago zakopano ispod piramida.",
+        "Opis...",
         3
       ),
       new Knjiga(
         2,
-        "Zivotnjska farma",
-        "17.7.1945",
-        "https://upload.wikimedia.org/wikipedia/sr/thumb/c/c6/Zivotinjska_farma-dzordz_orvel_v.jpg/250px-Zivotinjska_farma-dzordz_orvel_v.jpg",
-        " Životinjska farma iako prvenstveno satira o Ruskoj revoluciji, odnosi na svaku nasilnu revoluciju koju predvode nemarni ljudi gladni vlasti.",
+        "Životinjska farma",
+        "1945-07-17",
+        "https://upload.wikimedia.org/wikipedia/sr/...",
+        "Opis...",
         4
       ),
     ];
@@ -74,12 +73,12 @@ function obradiFormu() {
     let form = document.querySelector("#dodajKnjigu");
     let formData = new FormData(form);
 
-    let id = generateId(getBooks());
+    let id = generateId(knjige);
     let naziv = formData.get("naziv");
     let datumStampanja = formData.get("datumStampanja");
     let putanjaDoSlike = formData.get("slikaKnjige");
-    let opis = formData.get("opisSlike");
-    let popularnost = formData.get("ocenaKnjige");
+    let opis = formData.get("opisKnjige");
+    let popularnost = parseInt(formData.get("ocenaKnjige")) || 0;
 
     let novaKnjiga = new Knjiga(
       id,
@@ -91,8 +90,9 @@ function obradiFormu() {
     );
     knjige.push(novaKnjiga);
     setBooks();
+    prikaziKnjige();
     form.reset();
-    alert("Uspesno ste dodali novu knjigu");
+    alert("Uspešno ste dodali novu knjigu.");
   });
 }
 
@@ -106,8 +106,51 @@ function generateId(knjige) {
   return maxId + 1;
 }
 
-// Inicijalizacija aplikacije
+function prikaziKnjige() {
+  const kontener = document.getElementById("pregledkontener");
+  if (!kontener) return;
+
+  kontener.innerHTML = "";
+
+  knjige.forEach((knjiga, index) => {
+    let red = document.createElement("tr");
+    red.innerHTML = `
+      <td>${index + 1}</td>
+      <td><span class="naziv-knjige" data-index="${index}">${knjiga.naziv}</span></td>
+      <td><button onclick="obrisiKnjigu(${index})">Obriši</button></td>
+    `;
+    kontener.appendChild(red);
+  });
+
+  const naslovi = document.querySelectorAll(".naziv-knjige");
+  naslovi.forEach(naslov => {
+    naslov.addEventListener("click", function () {
+      const index = this.dataset.index;
+      prikaziDetalje(knjige[index]);
+    });
+  });
+}
+
+function obrisiKnjigu(index) {
+  knjige.splice(index, 1);
+  setBooks();
+  prikaziKnjige();
+  document.getElementById("detaljiKnjige").innerHTML = ""; 
+}
+
+function prikaziDetalje(knjiga) {
+  const detaljiDiv = document.getElementById("detaljiKnjige");
+  detaljiDiv.innerHTML = `
+    <h2>${knjiga.naziv}</h2>
+    <p><strong>Datum štampanja:</strong> ${knjiga.datumStampanja}</p>
+    <p><strong>Opis:</strong> ${knjiga.opis}</p>
+    <p><strong>Popularnost:</strong> ${"⭐".repeat(knjiga.popularnost)}</p>
+    <img src="${knjiga.putanjaDoSlike}" alt="${knjiga.naziv}" style="max-width:200px">
+  `;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initializeBooks();
+  prikaziKnjige();
   obradiFormu();
 });
