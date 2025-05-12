@@ -96,30 +96,30 @@ h1 {
       }
     }
 
-   #radioBtns {
-  .zvezdice {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
+    #radioBtns {
+      .zvezdice {
+        display: inline-flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
 
-  input {
-    display: none;
-  }
+      input {
+        display: none;
+      }
 
-  label {
-    font-size: 2rem;
-    color: #ccc;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
+      label {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
 
-  input:checked ~ label,
-  label:hover,
-  label:hover ~ label {
-    color: gold;
-  }
-}
+      input:checked ~ label,
+      label:hover,
+      label:hover ~ label {
+        color: gold;
+      }
+    }
 
     button {
       width: 25%;
@@ -130,6 +130,7 @@ h1 {
       &:hover {
         background-color: $primary-color;
         color: white;
+        cursor: pointer;
       }
     }
   }

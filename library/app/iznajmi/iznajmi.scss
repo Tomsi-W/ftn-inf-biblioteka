@@ -12,13 +12,34 @@ h1 {
   text-align: center;
 }
 
-#dodajObrisi {
+#mojeKnjigeContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   background-color: rgba(
     255,
     255,
     255,
     0.5
   ); /* 0.5 znači 50% transparentnost */
+}
+
+.knjige-blok {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  table {
+    width: 100%;
+
+    button {
+      width: 100%;
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
 }
