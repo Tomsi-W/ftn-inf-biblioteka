@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moje knjige</title>
+    <title>Moje Knjige</title>
     <link rel="stylesheet" href="../../dist/iznajmi/iznajmi.css" />
   </head>
   <body>
@@ -12,21 +12,82 @@
       <ul class="nav-links">
         <li><a href="../contact/contact.html">Kontakt</a></li>
         <li>
-          <a href="../pregled/pregled.html"
-            >Pregled <br />
-            knjiga</a
-          >
+          <a href="../pregled/pregled.html">Pregled <br />knjiga</a>
         </li>
         <li>
           <a href="../iznajmi/iznajmi.html">Moje <br />Knjige</a>
         </li>
       </ul>
     </nav>
-    <h1>Dobrodošli u iznajmljivanje i vracanje knjiga</h1>
-    <div id="dodajObrisi">
-      <table id="iznajmi"></table>
-      <table id="vrati"></table>
+
+    <h1>Moje knjige</h1>
+
+    <div id="mojeKnjigeContainer">
+      <!-- Prva tabela  -->
+      <div class="knjige-blok">
+        <h2>Dostupne knjige</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Br.</th>
+              <th>Naziv</th>
+              <th>Akcija</th>
+            </tr>
+          </thead>
+          <tbody id="dostupneKnjige"></tbody>
+        </table>
+      </div>
+
+      <!-- Druga tabela -->
+      <div class="knjige-blok">
+        <h2>Iznajmljene knjige</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Br.</th>
+              <th>Naziv</th>
+              <th>Akcija</th>
+            </tr>
+          </thead>
+          <tbody id="iznajmljeneKnjige"></tbody>
+        </table>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <title>Moje knjige</title>
+            <link rel="stylesheet" href="../../dist/iznajmi/iznajmi.css" />
+          </head>
+          <body>
+            <nav class="navbar">
+              <h1 class="title">OnlineLib</h1>
+              <ul class="nav-links">
+                <li><a href="../contact/contact.html">Kontakt</a></li>
+                <li>
+                  <a href="../pregled/pregled.html"
+                    >Pregled <br />
+                    knjiga</a
+                  >
+                </li>
+                <li>
+                  <a href="../iznajmi/iznajmi.html">Moje <br />Knjige</a>
+                </li>
+              </ul>
+            </nav>
+            <h1>Dobrodošli u iznajmljivanje i vracanje knjiga</h1>
+            <div id="dodajObrisi">
+              <table id="iznajmi"></table>
+              <table id="vrati"></table>
+            </div>
+          </body>
+        </html>
+      </div>
     </div>
-    <script src="../pregled/pregled.js"></script>
-  </body>
+  </div>
+
+  <script src="../iznajmi/iznajmi.js"></script>
+</body>
 </html>

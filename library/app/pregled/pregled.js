@@ -1,13 +1,14 @@
 "use strict";
 
 class Knjiga {
-  constructor(id, naziv, datumStampanja, putanjaDoSlike, opis, popularnost) {
+  constructor(id, naziv, datumStampanja, putanjaDoSlike, opis, popularnost,iznajmljena=false) {
     this.id = id;
     this.naziv = naziv;
     this.datumStampanja = datumStampanja;
     this.putanjaDoSlike = putanjaDoSlike;
     this.opis = opis;
     this.popularnost = popularnost;
+     this.iznajmljena = iznajmljena;
   }
 }
 
@@ -25,7 +26,8 @@ function getBooks() {
           k.datumStampanja,
           k.putanjaDoSlike,
           k.opis,
-          k.popularnost
+          k.popularnost,
+              k.iznajmljena || false
         )
     );
   }
@@ -51,7 +53,8 @@ function initializeBooks() {
         "2013-12-26",
         "https://laguna.rs/_img/korice/2313/alhemicar-paulo_koeljo_v.jpg",
         "Opis...",
-        3
+        3,
+        false
       ),
       new Knjiga(
         2,
@@ -59,7 +62,8 @@ function initializeBooks() {
         "1945-07-17",
         "https://upload.wikimedia.org/wikipedia/sr/...",
         "Opis...",
-        4
+        4,
+        false
       ),
     ];
     localStorage.setItem("knjige", JSON.stringify(initialKnjige));
@@ -117,7 +121,9 @@ function prikaziKnjige() {
     red.innerHTML = `
       <td>${index + 1}</td>
       <td><span class="naziv-knjige" data-index="${index}">${knjiga.naziv}</span></td>
-      <td><button onclick="obrisiKnjigu(${index})">Obriši</button></td>
+      <td>
+  ${!knjiga.iznajmljena ? `<button onclick="obrisiKnjigu(${index})">Obriši</button>` : ""}
+</td>
     `;
     kontener.appendChild(red);
   });
