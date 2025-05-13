@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -32,7 +31,7 @@ body {
 
 body {
   height: 100vh;
-  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-image: url(https://images.unsplash.com/photo-1638717191620-5a9510129932?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ymx1ZSUyMGNvbG9yfGVufDB8fDB8fHww);
   background-size: cover;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -45,7 +44,7 @@ h1 {
 #mojeKnjigeContainer {
   display: flex;
   justify-content: space-evenly;
-  background-color: rgba(255, 255, 255, 0.5); /* 0.5 znači 50% transparentnost */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .knjige-blok {
@@ -56,6 +55,11 @@ h1 {
 }
 .knjige-blok table {
   width: 100%;
+  border-radius: 10px;
+  border-color: aliceblue;
+}
+.knjige-blok table th {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .knjige-blok table button {
   width: 100%;

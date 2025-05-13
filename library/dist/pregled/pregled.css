@@ -31,7 +31,7 @@ body {
 
 body {
   height: 100vh;
-  background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-1915-x-1057-2w71h7swia6w5qa3.jpg);
+  background-image: url(https://images.unsplash.com/photo-1638717191620-5a9510129932?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ymx1ZSUyMGNvbG9yfGVufDB8fDB8fHww);
   background-size: cover;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -44,8 +44,9 @@ h1 {
 #pregledContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   gap: 20px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 20px;
 }
 #pregledContainer #listaKnjiga {
@@ -55,17 +56,25 @@ h1 {
   width: 100%;
   border-collapse: collapse;
 }
+#pregledContainer #listaKnjiga table th {
+  text-align: left;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#pregledContainer #listaKnjiga table tr {
+  border: none;
+}
 #pregledContainer #listaKnjiga table td {
   padding: 8px;
   border-bottom: 1px solid #ccc;
 }
 #pregledContainer #listaKnjiga table .naziv-knjige {
-  cursor: pointer;
-  color: lightblue;
+  color: aliceblue;
   text-decoration: underline;
 }
 #pregledContainer #listaKnjiga table .naziv-knjige:hover {
   color: white;
+  cursor: pointer;
 }
 #pregledContainer #listaKnjiga #detaljiKnjige {
   margin-top: 20px;
@@ -74,6 +83,7 @@ h1 {
   color: black;
   border-radius: 10px;
   text-align: center;
+  text-shadow: none;
 }
 #pregledContainer #listaKnjiga #detaljiKnjige img {
   max-width: 200px;
@@ -137,6 +147,7 @@ h1 {
   margin-left: auto;
 }
 #pregledContainer #dodajKnjigu button:hover {
+  cursor: pointer;
   background-color: #007bff;
   color: white;
 }
